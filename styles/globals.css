@@ -3,25 +3,95 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
+  --foreground-rgb: 247, 248, 249;
+  --background-start-rgb: 247, 248, 249;
   --background-end-rgb: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 247, 248, 249;
+    --background-start-rgb: 244, 245, 246;
+    --background-end-rgb: 255, 255, 255;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: #4f4f4f;
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: var(--font-open-sans);
+}
+
+.btn-light {
+  color: var(--bs-btn-hover-color);
+  background-color: var(--bs-btn-hover-bg);
+  border-color: var(--bs-btn-hover-border-color);
+}
+
+.btn-light:hover {
+  color: #ffffff;
+  background-color: #5c636a;
+  border-color: #5c636a;
+}
+
+p{
+  font-size: 1rem;
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+a {
+  color: #b73750;
+}
+
+pre.__json-pretty__ {
+  padding: 2rem;
+  background: #172a3e;
+  color: #aaaaaa;
+}
+
+.__json-key__ {
+  color: #aaaaaa;
+}
+
+.__json-string__ { color: #f7ce55; }
+.__json-value__ {color: #5cc971;}
+
+.icon-container:active {
+  animation: press 0.2s 1 linear;
+}
+.icon-container:active svg:last-child {
+  animation: bounce 0.2s 1 linear;
+}
+
+@keyframes press {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.92);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes bounce {
+  50% {
+    transform: rotate(5deg) translate(20px, -50px);
+  }
+  to {
+    transform: scale(0.9) rotate(10deg) translate(50px, -80px);
+    opacity: 0;
+  }
 }
