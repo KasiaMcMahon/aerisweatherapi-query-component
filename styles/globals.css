@@ -39,6 +39,18 @@ body {
   border-color: #5c636a;
 }
 
+.btn-light:focus {
+  color: #ffffff;
+  background-color: #5c636a;
+  border-color: #5c636a;
+}
+
+.btn-light.active-btn {
+  color: #ffffff;
+  background-color: #5c636a;
+  border-color: #5c636a;
+}
+
 p{
   font-size: 1rem;
 }

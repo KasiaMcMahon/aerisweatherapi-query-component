@@ -1,10 +1,12 @@
+// Inspired by https://blog.logrocket.com/implementing-copy-clipboard-react-clipboard-api/
+
 import { useState } from 'react';
 import { MdContentCopy } from 'react-icons/md';
-export default function ClipboardCopy({ copyText }) {
+export default function ClipboardCopy( {copyText}:any ) {
     const [isCopied, setIsCopied] = useState(false);
 
     // This is the function we wrote earlier
-    async function copyTextToClipboard(text) {
+    async function copyTextToClipboard(text:any) {
         if ('clipboard' in navigator) {
             return await navigator.clipboard.writeText(text);
         } else {
